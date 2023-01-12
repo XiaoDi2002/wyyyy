@@ -1,0 +1,52 @@
+<view class="videoContainer">
+
+ <!-- 头部区域 -->
+ <view class="header" >
+     <image src="../../static/images/视频问诊.png" />
+     <view class="search">搜索  </view>
+       <image src="../../static/images/logo.png" />
+ </view>
+  <!-- 导航区域 -->
+  <scroll-view scroll-x class="navscroll" enable-flex  scroll-into-view="{{'a'+navid}}" 	scroll-with-animation>
+      <view class="navItem" wx:for="{{videoGroupList}}" wx:key="id" id="{{'a' +item.id}}">
+      <!-- 点击那个那个就变红 先把每个容器都标上id值  点击事件获取容器的id值 写判断点击事件如果与容器上的id相等 
+      则触发active style样式 其他相等-->
+     
+      <view class="navContent {{navid== item.id? 'active' :''}}" bindtap="changeNav" id="{{ item.id}}"> 
+                {{item.name}}
+      </view>
+      </view>
+  </scroll-view>
+   <!-- 视频列表区域 -->
+   <!-- bindrefresherrefresh是下拉刷新触发回调 -->
+   <scroll-view scroll-y class="videoScroll" 	enhanced="true"	show-scrollbar="flase"
+   	refresher-enabled
+   bindrefresherrefresh="handleRefresher"
+   refresher-triggered="{{isTriggered}}"
+   >
+       <view class="videoItem" wx:for="{{videoListData.datas}}" wx:key="id">
+       <view class="videoScrollheader">
+        <image src="{{item.data.creator.avatarUrl}}"></image>
+      <view>
+            {{item.data.creator.nickname}}
+    </view>
+     </view>
+            <!-- 点击视频触发回调其他视频停止播放 -->
+             <!-- 做性能優化 以image代替video作为封面 多个video列表会导致视频卡段-->
+               <!--bindtimeupdate视频播放触发回调 -->
+            <video wx:if="{{videoId===item.data.vid}}" 
+            src="{{item.data.urlInfo}}"
+             bindplay="handlePlay" 
+             id="{{item.data.vid}}" 
+              poster="{{item.data.coverUrl}}"
+              object-fit="cover"
+            bindtimeupdate="handleTime"
+              ></video>
+              <image wx:else bindtap="handlePlay" id="{{item.data.vid}}" src="{{item.data.coverUrl}}">   </image>
+          <view class="videoScrolltitle">
+            {{item.data.title}}
+          </view>
+            
+       </view>
+   </scroll-view>
+</view>

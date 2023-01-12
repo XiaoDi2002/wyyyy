@@ -1,0 +1,106 @@
+.recommendSongContainer .header{
+    position: relative;
+    width: 100%;
+    height: 400rpx;
+  
+}
+.recommendSongContainer .header image{
+    width: 100%;
+    height: 100%;
+}
+.recommendSongContainer .header .data{
+    position: absolute;
+    top: 250rpx;
+    left: 30rpx;
+    width: 300rpx;
+   
+    background-color:#d5f4f6 ;
+    text-align: center;
+    height: 120rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    opacity: 0.7;
+   
+    
+}
+.recommendSongContainer .header .data .day{
+    font-size: 70rpx;
+    font-weight: 1000;
+}
+.recommendSongContainer .header .data .mouth{
+    font-size: 50rpx;
+    font-weight: 700;
+}
+.wb{
+    font-size: 20rpx;
+    position: absolute;
+    top: -48rpx;
+
+    left: 40rpx;
+}
+.ListContainer{
+    padding: 0 20rpx;
+    border-radius: 30rpx;
+    background-color: white;
+    position: relative;
+    top: -30rpx;
+}
+.listHerder {
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.ListContainer .listHerder .changeMore{
+    float: right;
+}
+.scrollItem{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.musicInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rpx;
+
+   
+
+}
+.musicInfo text{
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 24rpx;
+     /* 文字在单行不换行  设置文字最长度 
+    不换行  超出隐藏  隐藏部分用...*/
+    max-width: 400rpx;
+    white-space:nowrap ;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.scrollItem image{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 8rpx;
+}
+.listScroll .iconfont{
+    position: absolute;
+    width: 80rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    right: 0rpx;
+
+    text-align: center;
+}
+.scrollItem{
+    margin: 20rpx;
+}
+.listScroll{
+    height: calc(100vh - 380rpx);
+}
+.musicName{
+    font-weight: 700;
+    font-size: 50rpx;
+}
+.musicauthor{
+    color: rgb(149, 149, 149);
+}

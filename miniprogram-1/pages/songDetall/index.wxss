@@ -1,0 +1,138 @@
+/* pages/songDetall/index.wxss */
+.songDetallContainer{
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.circle{
+    position: relative;
+    z-index: 100;
+    width: 70rpx;
+    height: 70rpx;
+    background-color: white;
+    border-radius: 50%;
+    margin: 10rpx 0;
+}
+/* 摇杆的层级比磁盘层级高  position: relative;
+    z-index: 99; transform: rotate(-20deg);旋转角度 transform-origin:40rpx 0 是围绕那个点旋转
+    transition: transform 1s; 过度动画 选择变化的属性 和过度时间*/
+.songDetallContainer .needle{
+width: 192rpx;
+height: 274rpx;
+position: relative;
+z-index: 99;
+left: 57rpx;
+top: -40rpx;
+transform-origin:40rpx 0 ;
+transform: rotate(-30deg);
+transition: transform 1s;
+}
+.songDetallContainer .needleRotate{
+    transform: rotate(0deg)
+}
+.songDetallContainer .discConteiner{
+    position: relative;
+    z-index: 98;
+    top: -170rpx;
+    width: 598rpx;
+    height: 598rpx;
+
+
+}
+/* 旋转磁盘 animation: disc 1s linear infinite  设置过度动画的名称 时间和过渡方式和无限循环
+animation-delay: 1s; 延迟一秒在运动 等指针旋转动画结束*/
+.discAnimation{
+animation: disc 10s linear infinite;
+animation-delay: 1s;
+}
+/* 
+@keyframes可以设置动画帧
+from to（用于简单的动画） 和百分比（复杂的动画）
+ */
+@keyframes disc{
+from{
+    transform: rotate(0deg)
+}
+to{
+    transform: rotate(360deg)
+}
+}
+
+
+.discConteiner .disc{
+    width: 598rpx;
+    height: 598rpx;
+}
+.musicImg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 370rpx;
+    height: 370rpx;
+    border-radius: 50%;
+}
+
+/* 底部控制区域 */
+.musicControl{
+    position: absolute;
+    bottom: 40rpx ;
+    left: 0;
+    width: 100%;
+    display: flex;
+
+}
+.musicControl text{
+    width: 20%;
+    height: 120rpx;
+    line-height: 120rpx;
+    text-align: center;
+    font-size: 60rpx;
+}
+.musicControl .icon-zanting{
+    font-size: 100rpx;
+}
+.musicControl .icon-bofangzhong{
+    font-size: 100rpx;
+}
+.progressControl{
+    bottom: 200rpx;
+    position: absolute;
+    width: 640rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    display: flex;
+}
+.progressControl .barControl{
+    position: relative;
+    width: 450rpx;
+    height: 4rpx;
+    margin: auto;
+    background-color: rgb(203, 204, 204);
+}
+.progressControl .barControl .audio{
+    width: 100rpx;
+    height: 4rpx;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.progressControl .barControl .audio .audiocircle{
+    width: 18rpx;
+    height: 18rpx;
+    border-radius: 50%;
+    background-color: aliceblue;
+    position: absolute;
+    top: -5rpx;
+    right: 0;
+}
+.progressControl text{
+    font-size: 25rpx;
+    color: rgb(142, 142, 142);
+}

@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/recommendSong/index",
+    "pages/index/index",
+
+    "pages/songDetall/index",
+    "pages/personal/index",
+    "pages/login/index",
+    "pages/video/index"
+  ],
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#d43c33",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "/static/iconfont/zhuye.png",
+        "selectedIconPath": "/static/iconfont/zhuye1.png"
+      },
+      {
+        "pagePath": "pages/video/index",
+        "text": "视频",
+        "iconPath": "/static/iconfont/视频.png",
+        "selectedIconPath": "/static/iconfont/视频 (1).png"
+      },
+      {
+        "pagePath": "pages/personal/index",
+        "text": "我的",
+        "iconPath": "/static/iconfont/用户管理.png",
+        "selectedIconPath": "/static/iconfont/用户管理 (1).png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "迪爷云音乐",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "requiredBackgroundModes": ["audio", "location"],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
